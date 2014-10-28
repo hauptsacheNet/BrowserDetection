@@ -4,9 +4,23 @@
 module.exports = function(grunt) {
   "use strict";
   grunt.initConfig({
-
+    bump: {
+      options: {
+        files: ['package.json'],
+        updateConfigs: [],
+        commit: true,
+        commitMessage: 'Release v%VERSION%',
+        commitFiles: ['package.json'],
+        createTag: true,
+        tagName: 'v%VERSION%',
+        tagMessage: 'Version %VERSION%',
+        push: true,
+        pushTo: 'upstream',
+        gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d',
+        globalReplace: false
+      }
+    },
     pkg: grunt.file.readJSON('package.json'),
-
     devUpdate: {
       show: {
         options: {
@@ -32,7 +46,6 @@ module.exports = function(grunt) {
         }
       }
     },
-
     jshint: {
       options: {
         jshintrc: '.jshintrc'
@@ -46,7 +59,6 @@ module.exports = function(grunt) {
         ]
       }
     },
-
     uglify: {
       options: {
         banner: '/*!\n' +
@@ -59,25 +71,7 @@ module.exports = function(grunt) {
         src: 'src/BrowserDetector.js',
         dest: 'dist/HnBrowserDetector.min.js'
       }
-    },
-
-    bump: {
-      options: {
-        files: ['package.json'],
-        updateConfigs: [],
-        commit: true,
-        commitMessage: 'Release v%VERSION%',
-        commitFiles: ['package.json'],
-        createTag: true,
-        tagName: 'v%VERSION%',
-        tagMessage: 'Version %VERSION%',
-        push: true,
-        pushTo: 'upstream',
-        gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d',
-        globalReplace: false
-      }
     }
-
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
