@@ -1,0 +1,14 @@
+{
+  "undef": true,
+  "unused": true,
+  "strict": true,
+  "nonew": true,
+  "curly": true,
+  "noempty": true,
+  "noarg": true,
+  "eqeqeq": true,
+  "forin": true,
+  "bitwise": true,
+  "browser": true,
+  "predef": ["jQuery", "console"]
+}

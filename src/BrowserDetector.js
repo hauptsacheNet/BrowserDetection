@@ -116,7 +116,7 @@
         bind: function () {
             var self = this;
 
-            $document.on('hn_browser_detection_is_in_quirks_mode', function (event) {
+            $document.on('hn_browser_detection_is_in_quirks_mode', function () {
                 if (self.callback) {
                     self.callback();
                 } else {

@@ -1,7 +1,8 @@
+/*global module:false*/
+
+
 module.exports = function(grunt) {
-
   "use strict";
-
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
@@ -39,7 +40,7 @@ module.exports = function(grunt) {
       },
       src: {
         src: [
-          'BrowserDetector.js'
+          'src/BrowserDetector.js'
         ]
       }
     },
@@ -52,13 +53,12 @@ module.exports = function(grunt) {
         report: 'min'
       },
       Detection: {
-        src: 'HnBrowserDetector.js',
-        dest: 'HnBrowserDetector.min.js'
+        src: 'src/BrowserDetector.js',
+        dest: 'dist/HnBrowserDetector.min.js'
       }
     }
 
   });
-
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
