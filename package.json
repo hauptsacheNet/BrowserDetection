@@ -1,0 +1,20 @@
+{
+  "name": "HnBrowserDetection",
+  "description": "Detects the common browsers (InternetExplorer, Chrome, Safari, Firefox and offers minimal version check. Also detects if Internet Explorer is in quirks mode",
+  "homepage": "",
+  "author": {
+    "name": "Philipp Kretzschmar",
+    "email": "philipp@hauptsache.net"
+  },
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hauptsacheNet/BrowserDetection.git"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "^0.5.1",
+    "grunt-dev-update": "^0.7.0"
+  }
+}
