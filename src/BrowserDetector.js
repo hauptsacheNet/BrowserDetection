@@ -1,15 +1,7 @@
-/**
- * Created by philipp on 27.10.14.
- */
 (function (window, $) {
     "use strict";
 
-    /**
-     * TODO: MAKE CONFIGURABLE
-     * @type {*|HTMLElement}
-     */
-
-    var minVersion = window.hnBrowserMinVersion || {Explorer: 9, chrome: 20, firefox: 3};
+    var minVersion = window.hnBrowserMinVersion || {Explorer: 9, Chrome: 20, Firefox: 3};
 
     var $document = $(document);
 
@@ -120,14 +112,18 @@
                 if (self.callback) {
                     self.callback();
                 } else {
-                    window.alert("Your browser is in quirks mode and may not work as expected. Please configure for it to use standard mode.");
+                    console.log(
+                        "Your browser is in quirks mode and may not work as expected." +
+                        " Please configure for it to use standard mode."
+                    );
                 }
             });
 
             $document.on('hn_browser_unspported_browser', function (event, browser, version) {
-                window.alert("You are using the unsupported browser" +
-                " " + browser + " " + version + "" +
-                ". If you are sure that you are on the latest release, please check the browser mode.");
+                console.log(
+                    "You are using the unsupported browser" +
+                    " " + browser + " " + version + "" +
+                    ". If you are sure that you are on the latest release, please check the browser mode.");
             });
         },
         init: function (callback) {
